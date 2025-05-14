@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Pretendard';
+    src:
+        url('/static/fonts/Pretendard-Regular.woff') format('woff'),
+        url('/static/fonts/Pretendard-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src:
+        url('/static/fonts/Pretendard-Bold.woff') format('woff'),
+        url('/static/fonts/Pretendard-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src:
+        url('/static/fonts/Pretendard-Light.woff') format('woff'),
+        url('/static/fonts/Pretendard-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src:
+        url('/static/fonts/Pretendard-ExtraBold.woff') format('woff'),
+        url('/static/fonts/Pretendard-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* DatePicker 커스텀 스타일 */
+.react-datepicker {
+    font-family: 'Pretendard', sans-serif !important;
+    background-color: #161616 !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    color: white !important;
+}
+
+.react-datepicker__header {
+    background-color: #1c1c1c !important;
+    border-bottom: 1px solid #333 !important;
+    color: white !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+    color: white !important;
+}
+
+.react-datepicker__day {
+    color: #ccc !important;
+}
+
+.react-datepicker__day:hover {
+    background-color: #0077ff33 !important;
+    color: white !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background-color: #0077ff !important;
+    color: white !important;
+}
+
+.react-datepicker__day--highlighted {
+    background-color: #0077ff33 !important;
+    color: white !important;
+}
+
+.react-datepicker__day--disabled {
+    color: #555 !important;
+}
+
+.react-datepicker__triangle {
+    display: none !important;
+}
+
+.react-datepicker__navigation-icon::before {
+    border-color: #777 !important;
+}
+
+.react-datepicker__navigation:hover *::before {
+    border-color: white !important;
+}
+
+body {
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 1144px;
+    overflow-x: auto;
+    min-height: 100vh;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1144px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.container {
+    display: flex;
+    width: 1144px;
+    justify-content: space-between;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 808px;
+}
+
+.side-container {
+    width: 316px;
+}
+
+.two-column-grid {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.two-column-grid > div {
+    flex: 1;
+}
+
+.transition-standard {
+    transition: all 0.2s ease-in-out;
+}
+
+.hover-effect:hover {
+    transform: translateY(-2px);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #161616;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    overflow-x: auto;
+}
+
+.full-width {
+    width: 1144px;
+}
+
+@media (max-width: 440px) {
+    body {
+        overflow-x: hidden;
+        min-width: initial;
+    }
+
+    .wrap {
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .main-container,
+    .side-container {
+        width: 100%;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+
+    .two-column-grid {
+        flex-direction: column;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
